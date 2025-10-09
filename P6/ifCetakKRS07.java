@@ -7,12 +7,21 @@ public class ifCetakKRS07 {
         Scanner Christ = new Scanner (System.in);
 
         System.out.println("---Cetak KRS Siakad---");
-        System.out.print("Apakah ukt ini sudah lunas (true/fals)");
+        System.out.print("Apakah ukt ini sudah lunas (true/false)");
         boolean uktLunas = Christ.nextBoolean();
+    
 
         if (uktLunas) {
             System.out.println("pembayaran ukt terverivikasi");
             System.out.println("Silahkan cetak KRS dan minta tanda tangan DPA");
         }
-    }
-}
+        else {
+            System.out.println("“Registrasi ditolak. Silakan lunasi UKT terlebih dahulu");
+        }
+           
+            
+        }
+
+        }
+    
+

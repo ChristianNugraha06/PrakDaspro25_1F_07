@@ -1,5 +1,6 @@
 package P7;
 
+
 import java.util.Scanner;
 
 public class CM {
@@ -24,7 +25,7 @@ public class CM {
         int BING = Christ.nextInt();
         
        double nilaiSetaraBING =0;
-       double nilaiSetaraPancasila =0;
+       double nilaiSetaraPancasila=0;
        double nilaiSetaraDaspro =0;
 
        int SKSpancasila =2;
@@ -131,9 +132,11 @@ public class CM {
             System.out.println("Tidak lulus IPS anda kurang dari 2.0");
         }
         System.out.println("Status semester: " + Status07);
-        } 
+         
             
         }
+    }   
+
         
             
         

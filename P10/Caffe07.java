@@ -8,11 +8,15 @@ public class Caffe07 {
 
         System.out.print("Jumlah cabang : ");
         int Cabang = Christ.nextInt();
+        System.out.println();
 
+        System.out.println(" --- Input Penjualan Percabang ---");
+        System.out.println();
         int totalPembeli = 0, totalBarang =0;
 
         for (int i = 1; i <= Cabang; i++) {
-            System.out.println("--- Cabang " + i + "---" );
+            
+            System.out.println("--- Cabang " + i + " ---" );
             System.out.print("Jumlah pembeli: ");
             int pembeli = Christ.nextInt();
 

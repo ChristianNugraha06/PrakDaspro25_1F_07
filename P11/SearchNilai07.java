@@ -25,15 +25,21 @@ public class SearchNilai07 {
         System.out.print("Masukkan nilai yang dicari: ");
         int key = Christ.nextInt();
         
-
+        boolean ditemukan = false;
         int hasil=0;
         for (int i = 0; i < nilai.length; i++) {
             if (nilai[i] == key) {
                 hasil=i;
                 break;
             }
-             
-        }System.out.println("Nilai "+key+" ketemu, merupakan nilai mahasiswa ke-"+(hasil+1));
+
+            
+        }
+        if (ditemukan) {
+                System.out.println("Nilai "+key+" ketemu, merupakan nilai mahasiswa ke-"+(hasil+1));
+            }else {
+                System.out.println("Nilai tidak ditemukan");
+            }
         System.out.println();
        
     }

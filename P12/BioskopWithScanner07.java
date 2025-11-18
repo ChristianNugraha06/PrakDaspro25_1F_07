@@ -29,11 +29,15 @@ public class BioskopWithScanner07 {
                         System.out.print("Masukkan kolom: ");
                         kolom = Christ.nextInt();
                         Christ.nextLine();
-
-                      
-                         penonton[baris-1][kolom-1] = nama;
                         
 
+                      
+                         if (penonton[baris-1][kolom-1] == null) {
+                            penonton[baris-1][kolom-1] = nama;
+                         }else{
+                            System.out.println("Kursi sudah dipesan!");
+                            break;
+                         }
                         System.out.println("Tambahkan penonton lainnya?(y/n): ");
                         next = Christ.nextLine();
 

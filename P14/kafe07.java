@@ -31,34 +31,64 @@ public class kafe07 {
         System.out.println("================================");
         System.out.println("Silahkan pilih menu yang Anda inginkan");
     } 
-    public static int hitungTotalHarga(int pilihanMenu, int banyakItem, String kodePromo) {
+    public static int hitungTotalHarga(int pilihanMenu, int banyakItem) {
         int [] hargaItems = {15000, 20000, 22000, 12000, 10000,18000 };
         int hargaTotal = hargaItems[pilihanMenu-1]*banyakItem;
+        return hargaTotal;
+    }
+      public static int hitungDiskon(int totalHargaSemua, String kodePromo) {
         int diskon = 0;
+       
         if (kodePromo.equals("DISKON50")) {
-            diskon = hargaTotal * 50 / 100;
+            diskon = totalHargaSemua * 50 / 100;
             System.out.println("Anda mendapat diskon 50%: Rp" + diskon);
         } else if (kodePromo.equals("DISKON30")) {
-            diskon = hargaTotal * 30 / 100;
+            diskon = totalHargaSemua * 30 / 100;
             System.out.println("Anda mendapat diskon 30%: Rp" + diskon);
         } else {
             System.out.println("Kode promo invalid, tidak ada pengurangan harga");
         }
-        hargaTotal=hargaTotal-diskon;
-        return hargaTotal;
-    }public static void main(String[] args) {
+        return diskon;
+    }
+    public static void main(String[] args) {
         Scanner Christ = new Scanner(System.in);
         Menu("Budi", true, "DISKON30");
-    
-      System.out.print("\n Masuukan nomor menu yang ingin anda pesan: ");
-      int pilihanMenu = Christ.nextInt();
-      System.out.print("Masukkan jumlah item yang ingin di pesan: ");
-      int banyakItem = Christ.nextInt();
-      System.out.println("Masukkan kode promo (Atau input 'TIDAK' jika tidak ada");
-      String kodePromo = Christ.next();
-      int totalHarga = hitungTotalHarga(pilihanMenu, banyakItem, kodePromo);
 
-      System.out.println("Total harga untuk pesanan anda: Rp" + totalHarga);
+        int totalHargaSemua = 0;
+        String[] namaMenu = {"Kopi Hitam", "Cappucino", "Latte", "Teh Tarik", "Roti Bakar", "Mie Goreng"};
+
+         System.out.print("\nBerapa jenis menu yang ingin Anda pesan? ");
+        int jumlahJenisMenu = Christ.nextInt();
+
+        System.out.println("Detail pesanan :");
+
+        for (int i = 1; i <= jumlahJenisMenu; i++) {
+            System.out.print("\nPesanan ke-" + i);
+            System.out.print("\nMasukkan nomor menu (1-6): ");
+            int pilihanMenu = Christ.nextInt();
+            
+            System.out.print("Masukkan jumlah item: ");
+            int banyakItem = Christ.nextInt();
+            
+          int hargaPesanan = hitungTotalHarga(pilihanMenu, banyakItem);
+            totalHargaSemua += hargaPesanan;
+
+            System.out.println(namaMenu[pilihanMenu-1]+ " X " + banyakItem + " = Rp" + hargaPesanan);
+
+        }
+
+        System.out.println("Total harga sebelum diskon: Rp" + totalHargaSemua);
+
+        System.out.print("Masukkan kode promo (atau ketik 'TIDAK' jika tidak ada): ");
+       String kodePromo = Christ.next();
+
+       int diskon = hitungDiskon(totalHargaSemua, kodePromo);
+       int totalAkhir = totalHargaSemua - diskon;
+
+       System.out.println("Total akhir yang harus dibayar: Rp" +totalAkhir);
+    
+    
+    
     }
         
        

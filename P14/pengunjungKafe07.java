@@ -15,5 +15,7 @@ public class pengunjungKafe07 {
         daftarPengunjung("Ali","Budi","Citra");
         daftarPengunjung("Andi");
         daftarPengunjung("Doni", "Eti", "Fahmi", "Galih");
-    }
+
+        daftarPengunjung();
+    } 
 } 

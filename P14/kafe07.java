@@ -86,11 +86,13 @@ public class kafe07 {
        int totalAkhir = totalHargaSemua - diskon;
 
        System.out.println("Total akhir yang harus dibayar: Rp" +totalAkhir);
+
+        
     
     
     
     }
-        
+       
        
     
 } 

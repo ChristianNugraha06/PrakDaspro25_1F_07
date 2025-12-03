@@ -1,12 +1,21 @@
 package P14;
 
 public class kafe07 {
-    public static void Menu (String NamaPelanggan, Boolean isMember ) {
+    public static void Menu (String NamaPelanggan, Boolean isMember, String kodePromo  ) {
 
         System.out.println("Selamat datang : " +NamaPelanggan + "!" );
+       
 
         if (isMember) {
-            System.out.println("Anda adalah member, dapatkan diskon 10% untuk setiap pembelian");
+            System.out.println("Anda adalah member");
+        }
+       
+        if (kodePromo.equals("DISKON50")) {
+            System.out.println("Anda mendapatkan diskon 50%!");
+        }else if (kodePromo.equals("DISKON30")) {
+            System.out.println("Anda medapatkan diskon30%!");
+        }else {
+            System.out.println("Kode promo invalid!");
         }
         
 
@@ -20,7 +29,7 @@ public class kafe07 {
         System.out.println("================================");
         System.out.println("Silahkan pilih menu yang Anda inginkan");
     } public static void main(String[] args) {
-        Menu("Andi",true );
+        Menu("Andi",true, "DISKON50" );
     }
         
        

@@ -21,8 +21,6 @@ public class kafe07 {
             System.out.println("Kode promo invalid!");
         }
         
-    
-
         System.out.println("=== MENU RESTO CAFE ===");
         System.out.println("1. Kopi Hitam - Rp 15,000");
         System.out.println("2. Cappucino - Rp 20,000");
@@ -39,6 +37,7 @@ public class kafe07 {
         return hargaTotal;
     }public static void main(String[] args) {
         Scanner Christ = new Scanner(System.in);
+        Menu("Budi", true, "");
     
       System.out.print("\n Masuukan nomor menu yang ingin anda pesan: ");
       int pilihanMenu = Christ.nextInt();

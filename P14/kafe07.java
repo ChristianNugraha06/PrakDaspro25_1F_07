@@ -1,7 +1,10 @@
 package P14;
 
+import java.util.Scanner;
+
 public class kafe07 {
     public static void Menu (String NamaPelanggan, Boolean isMember, String kodePromo  ) {
+
 
         System.out.println("Selamat datang : " +NamaPelanggan + "!" );
        
@@ -18,6 +21,7 @@ public class kafe07 {
             System.out.println("Kode promo invalid!");
         }
         
+    
 
         System.out.println("=== MENU RESTO CAFE ===");
         System.out.println("1. Kopi Hitam - Rp 15,000");
@@ -28,8 +32,21 @@ public class kafe07 {
         System.out.println("6. Mie Goreng - Rp 18,000");
         System.out.println("================================");
         System.out.println("Silahkan pilih menu yang Anda inginkan");
-    } public static void main(String[] args) {
-        Menu("Andi",true, "DISKON50" );
+    } 
+    public static int hitungTotalHarga(int pilihanMenu, int banyakItem) {
+        int [] hargaItems = {15000, 20000, 22000, 12000, 10000,18000 };
+        int hargaTotal = hargaItems[pilihanMenu-1]*banyakItem;
+        return hargaTotal;
+    }public static void main(String[] args) {
+        Scanner Christ = new Scanner(System.in);
+    
+      System.out.print("\n Masuukan nomor menu yang ingin anda pesan: ");
+      int pilihanMenu = Christ.nextInt();
+      System.out.print("Masukkan jumlah item yang ingin di pesan: ");
+      int banyakItem = Christ.nextInt();
+      int totalHarga = hitungTotalHarga(pilihanMenu, banyakItem);
+
+      System.out.println("Total harga untuk pesanan anda: Rp" + totalHarga);
     }
         
        

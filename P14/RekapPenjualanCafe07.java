@@ -1,9 +1,17 @@
 package P14;
 
-
 import java.util.Scanner;
 
 public class RekapPenjualanCafe07 {
+    
+    static void inputNamaMenu(String[] namaMenu, Scanner Christ) {
+        System.out.println("\n===== INPUT NAMA MENU =====");
+        Christ.nextLine();
+        for (int i = 0; i < namaMenu.length; i++) {
+            System.out.print("Masukkan nama menu ke-" + (i + 1) + ": ");
+            namaMenu[i] = Christ.nextLine();
+        }
+    }
     
     static void inputDataPenjualan(int[][] penjualan, String[] namaMenu, Scanner Christ) {
         System.out.println("\n===== INPUT DATA PENJUALAN =====");
@@ -23,13 +31,18 @@ public class RekapPenjualanCafe07 {
             System.out.print("Hari " + (j + 1) + "\t");
         }
         System.out.println();
-        System.out.println("================================================================");
+        
+        String separator = "";
+        for (int j = 0; j < penjualan[0].length + 2; j++) {
+            separator += "========";
+        }
+        System.out.println(separator);
         
         for (int i = 0; i < namaMenu.length; i++) {
             System.out.print(namaMenu[i]);
             if (namaMenu[i].length() < 8) {
                 System.out.print("\t\t");
-            } else {
+            } else if (namaMenu[i].length() < 16) {
                 System.out.print("\t");
             }
             for (int j = 0; j < penjualan[i].length; j++) {
@@ -37,7 +50,7 @@ public class RekapPenjualanCafe07 {
             }
             System.out.println();
         }
-        System.out.println("================================================================");
+        System.out.println(separator);
     }
     
     static void tampilkanMenuTertinggi(int[][] penjualan, String[] namaMenu) {
@@ -68,15 +81,24 @@ public class RekapPenjualanCafe07 {
                 total += penjualan[i][j];
             }
             double rataRata = (double) total / penjualan[i].length;
-            System.out.println(namaMenu[i] + ": " + rataRata);
+            System.out.printf("%s: %.2f\n", namaMenu[i], rataRata);
         }
     }
     
     public static void main(String[] args) {
         Scanner Christ = new Scanner(System.in);
         
-        String[] namaMenu = {"Kopi", "Teh", "Es Kelapa Muda", "Roti Bakar", "Gorengan"};
-        int[][] dataPenjualan = new int[5][7];
+        System.out.println("===== PROGRAM REKAP PENJUALAN KAFE =====");
+        System.out.print("Masukkan jumlah menu: ");
+        int jumlahMenu = Christ.nextInt();
+        
+        System.out.print("Masukkan jumlah hari: ");
+        int jumlahHari = Christ.nextInt();
+        
+        String[] namaMenu = new String[jumlahMenu];
+        int[][] dataPenjualan = new int[jumlahMenu][jumlahHari];
+        
+        inputNamaMenu(namaMenu, Christ);
         
         inputDataPenjualan(dataPenjualan, namaMenu, Christ);
         
@@ -89,5 +111,3 @@ public class RekapPenjualanCafe07 {
         Christ.close();
     }
 }
-    
-

@@ -40,6 +40,8 @@ public class ArrayRataNilai07 {
         if (mhsTdkLlus>0) {
             Rata2TL = totalTdkLulus/mhsTdkLlus;
         }
+        System.out.println("Jumlah mahasiswa lulus: " +mhsLulus);
+        System.out.println("Jumlah mahasiswa tidak lulus: " +mhsTdkLlus);
         System.out.println("Rata-rata nilai lulus = "+rata2L);
         System.out.println("Rata-rata nilai tdiak lulus = "+Rata2TL);
     } 

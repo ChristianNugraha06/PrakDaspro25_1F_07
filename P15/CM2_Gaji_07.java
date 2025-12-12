@@ -204,6 +204,7 @@ public class CM2_Gaji_07 {
         System.out.println("Pajak (5%)          : Rp" + formatAngka07(pajak07));
         System.out.println("-------------------------------------------");
         System.out.println("Gaji Bersih (Net)   : Rp" + formatAngka07(gajiBersih07));
+    }
         
     
     static String formatAngka07(double angka07) {
